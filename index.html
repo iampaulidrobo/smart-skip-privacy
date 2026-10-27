@@ -1,61 +1,209 @@
-# Privacy Policy for Smart Skip
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Skip — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for the Smart Skip Chrome extension." />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1b1d24;
+        --muted: #5b6070;
+        --line: #e3e5ec;
+        --code-bg: #f2f3f7;
+        --accent: #0f8f80;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101219;
+          --text: #eef0f6;
+          --muted: #8b90a3;
+          --line: #262b3a;
+          --code-bg: #1e222f;
+          --accent: #2dd4bf;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 16px 64px;
+      }
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin: 0 0 8px;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 40px 0 12px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      .updated {
+        color: var(--muted);
+        margin: 0 0 24px;
+      }
+      ul,
+      ol {
+        padding-left: 1.4em;
+      }
+      li {
+        margin: 6px 0;
+      }
+      code {
+        font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: var(--code-bg);
+        padding: 1px 5px;
+        border-radius: 5px;
+        overflow-wrap: anywhere;
+      }
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Smart Skip — Privacy Policy</h1>
+      <p class="updated">Last updated: October 28, 2026</p>
 
-**Effective Date:** July 23, 2026
+      <p>
+        Smart Skip is designed to be private by default. This policy explains, in plain
+        language, exactly what the extension does and does not do with your data.
+      </p>
 
-Smart Skip is designed with privacy as a core principle.
+      <h2>The short version</h2>
+      <ul>
+        <li>Smart Skip does <strong>not</strong> collect, transmit, sell, or share any of your data.</li>
+        <li>There are <strong>no analytics, no telemetry, no tracking, and no remote servers.</strong></li>
+        <li>
+          Everything the extension stores stays <strong>on your device</strong>, inside your
+          browser's local extension storage.
+        </li>
+        <li>You can view, export, or permanently delete all of it at any time.</li>
+      </ul>
 
-## Information We Collect
+      <h2>What the extension stores (locally only)</h2>
+      <p>
+        To provide its features, Smart Skip saves the following using the browser's
+        <code>chrome.storage.local</code> API. This data never leaves your computer.
+      </p>
+      <ol>
+        <li>
+          <strong>Settings</strong> — your feature toggles (auto-skip, mute, speed-up, visual
+          feedback, debug logging, hide watched videos / Mixes) and any per-channel exceptions
+          you create.
+        </li>
+        <li>
+          <strong>Aggregate statistics</strong> — counts of how many ads were handled today,
+          over time, and a per-category tally.
+        </li>
+        <li>
+          <strong>Ad history</strong> — a local, size-limited log of ads the extension acted on.
+          For each ad this may include: a timestamp and date, the detected advertiser or brand
+          (when shown on screen), the host video's title and URL, the channel name, an estimated
+          ad duration, whether it was skipped or muted, the playback speed used, the ad type
+          (skippable / non-skippable), and a locally inferred category (e.g. "Gaming",
+          "Finance", "Tech").
+        </li>
+        <li>
+          <strong>Opened videos (only if you turn on "Hide watched Mixes")</strong> — the YouTube
+          video IDs of videos you open, each with the time you last opened it, so the extension
+          can hide Mixes that start from a song you've already played. No titles, channels or
+          other details are kept, the list is capped to the most recent 5,000 videos, and
+          nothing is recorded while the option is off.
+        </li>
+      </ol>
+      <p>
+        The ad-category inference runs <strong>entirely on your device</strong> using a built-in
+        keyword model. No text is sent anywhere to be classified.
+      </p>
 
-Smart Skip does **not collect, transmit, sell, or share** any personal information.
+      <h2>What the extension does NOT do</h2>
+      <ul>
+        <li>It does not create an account or profile.</li>
+        <li>It does not use cookies, web beacons, or fingerprinting.</li>
+        <li>
+          It does not contact any Smart Skip server, advertising network, or analytics provider.
+          Smart Skip has no servers.
+        </li>
+        <li>
+          It does not read your YouTube login, your YouTube watch history, or personal account
+          details. The only viewing data it keeps is the optional, on-device list of opened video
+          IDs described above.
+        </li>
+        <li>It does not inject third-party code or make network requests of its own.</li>
+      </ul>
 
-The extension stores the following information locally on your device using Chrome Storage:
+      <h2>Permissions and why they are needed</h2>
+      <ul>
+        <li>
+          <strong><code>storage</code></strong> — to save your settings, the local ad
+          history/statistics and the optional opened-videos list described above.
+        </li>
+        <li>
+          <strong>Host access to <code>*://*.youtube.com/*</code></strong> — so the content
+          script can detect and act on ads while you are watching YouTube. The extension runs
+          only on YouTube pages and nowhere else.
+        </li>
+      </ul>
+      <p>No other permissions are requested.</p>
 
-- Extension settings
-- User preferences
-- Local advertisement history
-- Local advertisement statistics
-- Category insights
+      <h2>Your control over your data</h2>
+      <ul>
+        <li>
+          <strong>View</strong> — the "Ad Insights" page shows your history, category breakdown,
+          and statistics.
+        </li>
+        <li>
+          <strong>Export</strong> — the "Export data" button downloads a JSON file of your local
+          data to your computer. This is a local download; nothing is uploaded.
+        </li>
+        <li>
+          <strong>Delete</strong> — "Clear history" (Ad Insights) or "Reset statistics &amp;
+          history" (Settings) permanently deletes the stored data, and "Forget list" (Settings)
+          deletes the opened-videos list. Uninstalling the extension also removes all of it.
+        </li>
+      </ul>
 
-This information never leaves your browser.
+      <h2>Data retention</h2>
+      <p>
+        The ad history is automatically capped (oldest entries are removed once the log grows
+        beyond its limit), daily statistics are retained for a rolling window, and the
+        opened-videos list keeps only the 5,000 most recently opened videos. Nothing is retained
+        off your device because nothing is ever sent off your device.
+      </p>
 
-## Data Sharing
+      <h2>Children's privacy</h2>
+      <p>
+        Smart Skip does not knowingly collect any personal information from anyone, including
+        children, because it does not collect personal information at all.
+      </p>
 
-Smart Skip does not:
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, the updated version will ship with the extension and the "Last
+        updated" date above will change.
+      </p>
 
-- Sell personal information
-- Share information with third parties
-- Upload browsing activity
-- Track users across websites
-- Use analytics services
-
-## Permissions
-
-### storage
-
-Used only to save extension settings and local statistics.
-
-### YouTube Host Permission
-
-Used only to operate on YouTube pages to:
-
-- Detect advertisements
-- Skip skippable ads
-- Mute advertisements
-- Optionally speed up advertisements
-
-No browsing data is transmitted outside your device.
-
-## Remote Code
-
-Smart Skip does not download or execute remote JavaScript or WebAssembly.
-All executable code is packaged within the extension.
-
-## Changes
-
-This Privacy Policy may be updated if the extension changes.
-
-## Contact
-
-For questions regarding this Privacy Policy:
-
-your-email@example.com
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy can be raised through the extension's support channel on its
+        Chrome Web Store listing.
+      </p>
+    </main>
+  </body>
+</html>
