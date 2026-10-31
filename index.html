@@ -116,11 +116,11 @@
           For each ad this may include: a timestamp and date, the detected advertiser or brand
           (when shown on screen), the host video's title and URL, the channel name, an estimated
           ad duration, whether it was skipped or muted, the playback speed used, the ad type
-          (skippable / non-skippable), and a locally inferred category (e.g. "Gaming",
-          "Finance", "Tech").
+          (skippable / non-skippable), how long the ad ran after Skip was offered, and a locally
+          inferred category (e.g. "Gaming", "Finance", "Tech").
         </li>
         <li>
-          <strong>Watched videos (only if you turn on "Hide watched Mixes")</strong> — the
+          <strong>Watched videos (only if you turn on "Only Mixes of songs I've played")</strong> — the
           YouTube video IDs of videos you open, and of the videos on your own YouTube watch
           history page, each with a time, so the extension can hide Mixes that start from a song
           you've already played. No titles, channels or other details are kept, the list is
@@ -154,7 +154,7 @@
         </li>
         <li>It does not read your YouTube password or account details.</li>
         <li>
-          It reads your YouTube watch history only if you turn on "Hide watched Mixes" or the
+          It reads your YouTube watch history only if you turn on "Only Mixes of songs I've played" or the
           monthly history email, and only from youtube.com itself, using your existing YouTube
           session in your browser, the same way YouTube's History page loads it. To read more
           than the first page, it signs the request with YouTube's standard signature, computed
@@ -200,7 +200,7 @@
         <li>
           <strong>Delete</strong> — "Clear history" (Ad Insights) or "Reset statistics &amp;
           history" (Settings) permanently deletes the stored data, and "Forget list" (Settings)
-          deletes the watched-videos list. Turning "Hide watched Mixes" off stops it from being
+          deletes the watched-videos list. Turning "Only Mixes of songs I've played" off stops it from being
           rebuilt. Uninstalling the extension also removes all of it.
         </li>
       </ul>
