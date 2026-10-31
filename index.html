@@ -78,7 +78,7 @@
   <body>
     <main>
       <h1>Smart Skip — Privacy Policy</h1>
-      <p class="updated">Last updated: October 28, 2026</p>
+      <p class="updated">Last updated: October 31, 2026</p>
 
       <p>
         Smart Skip is designed to be private by default. This policy explains, in plain
@@ -104,8 +104,8 @@
       <ol>
         <li>
           <strong>Settings</strong> — your feature toggles (auto-skip, mute, speed-up, visual
-          feedback, debug logging, hide watched videos / Mixes) and any per-channel exceptions
-          you create.
+          feedback, debug logging, hide watched videos / Mixes, monthly history email and the
+          optional address it goes to) and any per-channel exceptions you create.
         </li>
         <li>
           <strong>Aggregate statistics</strong> — counts of how many ads were handled today,
@@ -120,11 +120,17 @@
           "Finance", "Tech").
         </li>
         <li>
-          <strong>Opened videos (only if you turn on "Hide watched Mixes")</strong> — the YouTube
-          video IDs of videos you open, each with the time you last opened it, so the extension
-          can hide Mixes that start from a song you've already played. No titles, channels or
-          other details are kept, the list is capped to the most recent 5,000 videos, and
-          nothing is recorded while the option is off.
+          <strong>Watched videos (only if you turn on "Hide watched Mixes")</strong> — the
+          YouTube video IDs of videos you open, and of the videos on your own YouTube watch
+          history page, each with a time, so the extension can hide Mixes that start from a song
+          you've already played. No titles, channels or other details are kept, the list is
+          capped to the most recent 5,000 videos, and nothing is recorded while the option is
+          off.
+        </li>
+        <li>
+          <strong>Monthly history email state (only if you turn on "Email my YouTube history
+          monthly")</strong> — the month you last exported and, if you chose "Later", when to
+          ask again.
         </li>
       </ol>
       <p>
@@ -135,24 +141,37 @@
       <h2>What the extension does NOT do</h2>
       <ul>
         <li>It does not create an account or profile.</li>
-        <li>It does not use cookies, web beacons, or fingerprinting.</li>
+        <li>It does not set or store cookies, and uses no web beacons or fingerprinting.</li>
         <li>
           It does not contact any Smart Skip server, advertising network, or analytics provider.
           Smart Skip has no servers.
         </li>
+        <li>It does not read your YouTube password or account details.</li>
         <li>
-          It does not read your YouTube login, your YouTube watch history, or personal account
-          details. The only viewing data it keeps is the optional, on-device list of opened video
-          IDs described above.
+          It reads your YouTube watch history only if you turn on "Hide watched Mixes" or the
+          monthly history email, and only from youtube.com itself, using your existing YouTube
+          session in your browser, the same way YouTube's History page loads it. To read more
+          than the first page, it signs the request with YouTube's standard signature, computed
+          in your browser from your YouTube session cookie; the cookie is never stored and never
+          sent anywhere but youtube.com. The only viewing data kept is the on-device list
+          described above.
         </li>
-        <li>It does not inject third-party code or make network requests of its own.</li>
+        <li>
+          It never sends email. The monthly history email saves a file to your Downloads folder
+          and opens a Gmail draft in a new tab; you decide whether to attach the file and press
+          Send.
+        </li>
+        <li>
+          It does not inject third-party code. Its only network requests are the optional
+          watch-history reads from youtube.com described above.
+        </li>
       </ul>
 
       <h2>Permissions and why they are needed</h2>
       <ul>
         <li>
           <strong><code>storage</code></strong> — to save your settings, the local ad
-          history/statistics and the optional opened-videos list described above.
+          history/statistics and the optional watched-videos list described above.
         </li>
         <li>
           <strong>Host access to <code>*://*.youtube.com/*</code></strong> — so the content
@@ -175,7 +194,8 @@
         <li>
           <strong>Delete</strong> — "Clear history" (Ad Insights) or "Reset statistics &amp;
           history" (Settings) permanently deletes the stored data, and "Forget list" (Settings)
-          deletes the opened-videos list. Uninstalling the extension also removes all of it.
+          deletes the watched-videos list. Turning "Hide watched Mixes" off stops it from being
+          rebuilt. Uninstalling the extension also removes all of it.
         </li>
       </ul>
 
@@ -183,7 +203,7 @@
       <p>
         The ad history is automatically capped (oldest entries are removed once the log grows
         beyond its limit), daily statistics are retained for a rolling window, and the
-        opened-videos list keeps only the 5,000 most recently opened videos. Nothing is retained
+        watched-videos list keeps only the 5,000 most recent videos. Nothing is retained
         off your device because nothing is ever sent off your device.
       </p>
 
